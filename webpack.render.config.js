@@ -4,9 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = merge.smart(require('./webpack.config'), {
-    target: 'electron-renderer',
+    target: 'electron-render',
     entry: {
-        app: ['@babel/polyfill','./src/renderer/protonui.tsx']
+        app: ['@babel/polyfill','./src/render/protonui.tsx']
     },
     module: {
         rules: [
@@ -60,7 +60,7 @@ module.exports = merge.smart(require('./webpack.config'), {
     },
     plugins: [
         new ForkTsCheckerWebpackPlugin({
-            reportFiles: ['src/renderer/**/*']
+            reportFiles: ['src/render/**/*']
         }),
         new webpack.NamedModulesPlugin(),
         new HtmlWebpackPlugin(),
