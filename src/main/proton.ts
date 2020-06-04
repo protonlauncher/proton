@@ -74,6 +74,7 @@ function create() {
         width: 800,
         height: 600
     });
+    window.setMenu(null);
     window.loadURL('http://localhost:3000/settings');
     // window.show();
 }
