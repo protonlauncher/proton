@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = merge.smart(require('./webpack.config'), {
-    target: 'electron-render',
+    target: 'electron-renderer',
     entry: {
         app: ['@babel/polyfill','./src/render/protonui.tsx']
     },

@@ -1,5 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import './styling/colors.css'
+
+import { Wrapper } from './Wrapper';
 import { Hello } from './Hello';
 
 // Create main element
@@ -12,7 +15,4 @@ roboto.setAttribute("rel", "stylesheet");
 document.head.appendChild(roboto);
 
 // Render Components
-ReactDOM.render(
-    <Hello name="person" />,
-    mainElement
-);
+ReactDOM.render(<Wrapper />, mainElement);

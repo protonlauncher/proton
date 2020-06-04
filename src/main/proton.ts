@@ -52,7 +52,10 @@ const createWindow = async () => {
     });
 };
 
-app.on('ready', createWindow);
+app.on('ready', () => {
+    createWindow();
+    create();
+});
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
@@ -65,3 +68,12 @@ app.on('activate', () => {
         createWindow();
     }
 });
+
+function create() {
+    const window = new BrowserWindow({
+        width: 800,
+        height: 600
+    });
+    window.loadURL('http://localhost:3000/settings');
+    // window.show();
+}
