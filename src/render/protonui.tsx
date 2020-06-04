@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import './styling/colors.css'
+import './styling/colors.scss'
 
 import { Wrapper } from './Wrapper';
 import { Hello } from './Hello';
