@@ -63,7 +63,7 @@ module.exports = merge.smart(require('./webpack.config'), {
             reportFiles: ['src/render/**/*']
         }),
         new webpack.NamedModulesPlugin(),
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({ title: "Proton Launcher" }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
         })

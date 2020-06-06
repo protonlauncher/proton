@@ -19,10 +19,23 @@ const createWindow = async () => {
     }
 
     win = new BrowserWindow({
+        // Layout
+        center: true,
         width: 800,
+        minWidth: 800,
+        maxWidth: 1920,
         height: 600,
+        minHeight: 600,
+        maxHeight: 1080,
+
+        // Title bar
         fullscreenable: false,
+        maximizable: false,                     // not implemented on linux
         title: 'Proton Launcher',
+        icon: '../resources/proton_r2.png',     // todo this doesnt work
+
+        // Other
+        backgroundColor: '#121212',
     });
 
     win.setMenu(null);
@@ -43,7 +56,7 @@ const createWindow = async () => {
     if (process.env.NODE_ENV !== 'production') {
         // Open DevTools, see https://github.com/electron/electron/issues/12438 for why we wait for dom-ready
         win.webContents.once('dom-ready', () => {
-            // win!.webContents.openDevTools();
+            win!.webContents.openDevTools();
         });
     }
 
@@ -70,11 +83,11 @@ app.on('activate', () => {
 });
 
 function create() {
-    const window = new BrowserWindow({
-        width: 800,
-        height: 600
-    });
-    window.setMenu(null);
-    window.loadURL('http://localhost:3000/settings');
+    // const window = new BrowserWindow({
+    //     width: 800,
+    //     height: 600
+    // });
+    // window.setMenu(null);
+    // window.loadURL('http://localhost:3000/settings');
     // window.show();
 }
